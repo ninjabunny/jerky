@@ -334,9 +334,8 @@ var REASON = [
 	"the slogan was",
 	"they wanted me to"
 ];
-
-(function(){
-	var emotion = EMOTION[Math.floor((Math.random() * EMOTION.length))].toLowerCase();
+function fire(){
+		var emotion = EMOTION[Math.floor((Math.random() * EMOTION.length))].toLowerCase();
 	var location = LOCATION[Math.floor((Math.random() * LOCATION.length))];
 	var reason = REASON[Math.floor((Math.random() * REASON.length))];
 	document.getElementById("kneejerk1").innerHTML = 
@@ -347,5 +346,9 @@ var REASON = [
 	reason = REASON[Math.floor((Math.random() * REASON.length))];
 	document.getElementById("kneejerk3").innerHTML = 
 		"I felt " + emotion + " at the " + location + " because " + reason + "...";	
-})()
+}
+fire();
+document.body.addEventListener('click', function(){
+	fire();
+}, true); 
 
